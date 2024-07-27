@@ -22,6 +22,8 @@ with open('.env') as env:
     file_lines = env.read().split("\n")
 
 client_secret = file_lines[0]
+person_name = file_lines[1]
+cuka_no = file_lines[2]
 
 def main():
 
@@ -87,7 +89,7 @@ def main():
         if True: #if match
            #send email
            message = EmailMessage()
-           contents_of_email = "FULL NAME: INNOCENT ITOPA YAKUBU\nCUKA NUMBER: C010622\nTIME: 3:30PM TO 1:30AM 20TH OF JULY 2024\nSTATION: SPADINA\n\nRegards."
+           contents_of_email = f"FULL NAME: {person_name}\nCUKA NUMBER: {cuka_no}\nTIME: 3:30PM TO 1:30AM 20TH OF JULY 2024\nSTATION: SPADINA\n\nRegards."
            message.set_content(contents_of_email)
            
            rec = input("Enter talent world email: ")
